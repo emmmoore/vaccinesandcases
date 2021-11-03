@@ -1,0 +1,13 @@
+name: Update Daily Case and Vaccine Data
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  Data-Update:
+    runs-on: ubuntu-latest
+    - name: Load script
+      uses: .scripts/
+      with: python-version: 3.8
+    - name: Run script
+      run: | 
+      python run.py
